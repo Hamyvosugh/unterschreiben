@@ -26,8 +26,9 @@ export default function EmailSelector() {
   const [templates, setTemplates] = useState<any>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isRewriting, setIsRewriting] = useState(false);
 
-  // Load JSON data
+  // Loads JSON data
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -89,6 +90,40 @@ export default function EmailSelector() {
     setStep(4);
   };
 
+  const handleRewrite = async () => {
+    setIsRewriting(true);
+    try {
+      const response = await fetch("/api/rewrite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: emailData.body,
+          language: language,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to rewrite text");
+      }
+
+      const data = await response.json();
+      setEmailData({ ...emailData, body: data.rewrittenText });
+    } catch (error) {
+      console.error("Error rewriting text:", error);
+      alert(
+        language === "en"
+          ? "Failed to rewrite text. Please try again."
+          : language === "de"
+            ? "Fehler beim Umschreiben des Textes. Bitte versuchen Sie es erneut."
+            : "خطا در بازنویسی متن. لطفا دوباره تلاش کنید.",
+      );
+    } finally {
+      setIsRewriting(false);
+    }
+  };
+
   const handleSendEmail = (service: string) => {
     let url;
     const bodyWithName = userName
@@ -138,11 +173,11 @@ export default function EmailSelector() {
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center">
+      <div className="min-h-screen min-w-full   bg-linear-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center">
         <div className="text-center">
           <Loader2 className="w-12 h-12 text-blue-600 animate-spin mx-auto mb-4" />
           <p className="text-gray-600 font-medium">Loading data...</p>
-        </div>
+        </div>^
       </div>
     );
   }
@@ -175,7 +210,7 @@ export default function EmailSelector() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-4 md:p-8">
+    <div className="min-h-screen bg-transparent min-w-full max-w-full p-4 md:p-8">
       <div className="max-w-4xl mx-auto">
         {/* Language Selector */}
         <div className="mb-6 flex justify-end gap-2">
@@ -211,7 +246,7 @@ export default function EmailSelector() {
           </button>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden  ">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 md:p-8">
             <div className="flex items-center gap-3">
@@ -220,9 +255,9 @@ export default function EmailSelector() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-white">
-                  {language === "en" && "Email Selection System"}
-                  {language === "de" && "E-Mail-Auswahlsystem"}
-                  {language === "fa" && "سیستم انتخاب ایمیل"}
+                  {language === "en" && " Send Email to State Representatives"}
+                  {language === "de" && "E-Mail an Landesvertreter senden"}
+                  {language === "fa" && "ارسال ایمیل به نمایندگان ایالتی"}
                 </h1>
                 <p className="text-blue-100 text-sm mt-1">
                   {language === "en" && `Step ${step} of 4`}
@@ -234,7 +269,7 @@ export default function EmailSelector() {
           </div>
 
           {/* Progress Bar */}
-          <div className="bg-gray-100 h-2">
+          <div className="bg-gray-100 h-2 ">
             <div
               className="bg-gradient-to-r from-blue-600 to-indigo-600 h-full transition-all duration-500"
               style={{ width: `${(step / 4) * 100}%` }}
@@ -244,7 +279,7 @@ export default function EmailSelector() {
           <div className="p-6 md:p-8">
             {/* Step 1: Country Selection */}
             {step === 1 && (
-              <div className="space-y-4">
+              <div className="space-y-4 ">
                 <div className="flex items-center gap-2 mb-6">
                   <Globe className="w-5 h-5 text-blue-600" />
                   <h2 className="text-xl font-semibold text-gray-800">
@@ -333,8 +368,8 @@ export default function EmailSelector() {
                   <FileText className="w-5 h-5 text-blue-600" />
                   <h2 className="text-xl font-semibold text-gray-800">
                     {language === "en" && "Select Email Template"}
-                    {language === "de" && "E-Mail-Vorlage auswählen"}
-                    {language === "fa" && "انتخاب الگوی ایمیل"}
+                    {language === "de" && " E-Mail-Vorlage auswählen"}
+                    {language === "fa" && "انتخاب محتوای ایمیل"}
                   </h2>
                 </div>
 
@@ -374,17 +409,17 @@ export default function EmailSelector() {
 
                 <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-lg">
                   <p className="text-sm font-semibold text-blue-900 mb-2">
-                    {language === "en" && "Note: AI Rewriting"}
-                    {language === "de" && "Hinweis: KI-Umschreibung"}
-                    {language === "fa" && "توجه: بازنویسی با هوش مصنوعی"}
+                    {language === "en" && " Note: Please insert your name and click Rewrite with AI to make your text slightly different from other citizens."}
+                    {language === "de" && " Hinweis: Bitte Ihren Namen einfügen und auf die Schaltfläche Mit KI umschreiben klicken, damit Ihr Text sich leicht von dem anderer Bürger unterscheidet."}
+                    {language === "fa" && "توجه: نام خود را بنویسید و روی دکمه تغییر  با هوش مصنوعی کلیک کنید تا متن شما با کمی تفاوت نسبت به متن سایر هموطنان ارسال شود"}
                   </p>
                   <p className="text-sm text-blue-800">
                     {language === "en" &&
-                      "In the future, this content will be rewritten by ChatGPT API before sending to ensure uniqueness."}
+                      "No data is stored on this site."}
                     {language === "de" &&
-                      "In Zukunft wird dieser Inhalt vor dem Senden von der ChatGPT-API umgeschrieben, um Einzigartigkeit zu gewährleisten."}
+                      " Es werden keine Daten auf dieser Seite gespeichert."}
                     {language === "fa" &&
-                      "در آینده، این محتوا قبل از ارسال توسط ChatGPT بازنویسی خواهد شد تا منحصر به فرد باشد."}
+                      "هیچ گونه اطلاعاتی در این سایت ذخیره نمیشود"}
                   </p>
                 </div>
 
@@ -403,7 +438,7 @@ export default function EmailSelector() {
                         ? "Enter your full name"
                         : language === "de"
                           ? "Geben Sie Ihren vollständigen Namen ein"
-                          : "نام کامل خود را وارد کنید"
+                          : "نام کامل خود را وارد کنید، میتوانید در ایمیل خودتان هم این کار را بکنید"
                     }
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-gray-50 focus:bg-white"
                   />
@@ -440,11 +475,46 @@ export default function EmailSelector() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-gray-800 mb-2">
-                    {language === "en" && "Message"}
-                    {language === "de" && "Nachricht"}
-                    {language === "fa" && "پیام"}
-                  </label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-semibold text-gray-800">
+                      {language === "en" && "Message"}
+                      {language === "de" && "Nachricht"}
+                      {language === "fa" && "پیام"}
+                    </label>
+                    <button
+                      onClick={handleRewrite}
+                      disabled={isRewriting || !emailData.body}
+                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg text-sm"
+                    >
+                      {isRewriting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          {language === "en" && "Rewriting..."}
+                          {language === "de" && "Umschreiben..."}
+                          {language === "fa" && "در حال بازنویسی..."}
+                        </>
+                      ) : (
+                        <>
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                            />
+                          </svg>
+                          {language === "en" && "Rewrite with AI"}
+                          {language === "de" && "Mit KI umschreiben"}
+                          {language === "fa" && "بازنویسی با هوش مصنوعی"}
+                        </>
+                      )}
+                    </button>
+                  </div>
                   <textarea
                     value={emailData.body}
                     onChange={(e) =>
