@@ -18,8 +18,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-vazir: Vazirmatn, sans-serif;
   --color-bundesamt-blue: var(--bundesamt-blue);
   --color-bundesamt-light-blue: var(--bundesamt-light-blue);
   --color-bundesamt-dark: var(--bundesamt-dark);
