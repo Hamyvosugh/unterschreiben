@@ -77,7 +77,7 @@ const CountryCard = ({
         transition-all duration-300
         ${
           isActive
-            ? "cursor-pointer hover:bg-white/10 hover:scale-105 hover:shadow-xl"
+            ? "cursor-pointer hover:bg-transparent hover:scale-105 "
             : "cursor-not-allowed opacity-40"
         }
       `}

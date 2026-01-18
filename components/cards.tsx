@@ -17,6 +17,19 @@ const cardsData = [
     },
     link: "/bundestag",
   },
+  {
+    id: 2,
+    image: "/images/germany/bundestag.webp",
+    title: {
+      fa: "  نامه به سایر مراکز مهم در آلمان",
+      de: "Brief an andere wichtige Stellen in Deutschland",
+    },
+    description: {
+      fa: "مراکز اقتصادی مهمی که با ایران روابط اقتصادی کلانی دارند",
+      de: "Wichtige Wirtschaftszentren mit umfangreichen Wirtschaftsbeziehungen zum Iran",
+    },
+    link: "/germany/wirtschaft",
+  },
 ];
 
 interface CardProps {

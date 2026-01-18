@@ -5,7 +5,7 @@
       "de": "Baden-Württemberg",
       "fa": "بادن-وورتمبرگ"
     },
-    "email": "bw.contact@example.de",
+    "email": "poststelle@stk.baden-wuerttemberg.de, winfried.kretschmann@gruene.landtag-bw.de",
     "templates": ["template_1", "template_2", "template_3"]
   },
   "BY": {
@@ -14,7 +14,7 @@
       "de": "Bayern",
       "fa": "بایرن"
     },
-    "email": "bayern.contact@example.de",
+    "email": "poststelle@stk.bayern.de, landtag@bayern.landtag.de, ministerpraesident@stk.bayern.de",
     "templates": ["template_1", "template_4", "template_5"]
   },
   "BE": {
@@ -23,7 +23,7 @@
       "de": "Berlin",
       "fa": "برلین"
     },
-    "email": "berlin.contact@example.de",
+    "email": "der-regierende-buergermeister@senatskanzlei.berlin",
     "templates": ["template_2", "template_6", "template_7"]
   },
   "NW": {
@@ -32,7 +32,115 @@
       "de": "Nordrhein-Westfalen",
       "fa": "نوردراین-وستفالن"
     },
-    "email": "nrw.contact@example.de",
+    "email": "presse@stk.nrw.de, ministerpraesident@stk.nrw.de, nrwdirekt@nrw.de",
     "templates": ["template_1", "template_3", "template_8"]
+  },
+  "BB": {
+    "name": {
+      "en": "Brandenburg",
+      "de": "Brandenburg",
+      "fa": "براندنبورگ"
+    },
+    "email": "poststelle@stk.brandenburg.de, buergerbuero@stk.brandenburg.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "HB": {
+    "name": {
+      "en": "Bremen",
+      "de": "Bremen",
+      "fa": "برمن"
+    },
+    "email": "ifg@sk.bremen.de, buergerbuero@sk.bremen.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "HH": {
+    "name": {
+      "en": "Hamburg",
+      "de": "Hamburg",
+      "fa": "هامبورگ"
+    },
+    "email": "Poststelle@rs.hamburg.de, buergerbuero@sk.hamburg.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "HE": {
+    "name": {
+      "en": "Hesse",
+      "de": "Hessen",
+      "fa": "هسن"
+    },
+    "email": "info@stk.hessen.de, buergertelefon@stk.hessen.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "MV": {
+    "name": {
+      "en": "Mecklenburg-Vorpommern",
+      "de": "Mecklenburg-Vorpommern",
+      "fa": "مکلنبورگ-فورپومرن"
+    },
+    "email": "poststelle@stk.mv-regierung.de, buergerbuero@stk.mv-regierung.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "NI": {
+    "name": {
+      "en": "Lower Saxony",
+      "de": "Niedersachsen",
+      "fa": "نیدرزاکسن"
+    },
+    "email": "poststelle@stk.niedersachsen.de, internet-redaktion@stk.niedersachsen.de, buergerbuero@stk.niedersachsen.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "RP": {
+    "name": {
+      "en": "Rhineland-Palatinate",
+      "de": "Rheinland-Pfalz",
+      "fa": "راینلاند-فالتس"
+    },
+    "email": "poststelle@stk.rlp.de, buergerbuero@stk.rlp.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "SL": {
+    "name": {
+      "en": "Saarland",
+      "de": "Saarland",
+      "fa": "سارلند"
+    },
+    "email": "poststelle@staatskanzlei.saarland.de, m.burghard@staatskanzlei.saarland.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "SN": {
+    "name": {
+      "en": "Saxony",
+      "de": "Sachsen",
+      "fa": "زاکسن"
+    },
+    "email": "ministerpraesident@dd.sk.sachsen.de, buergerbuero@dd.sk.sachsen.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "ST": {
+    "name": {
+      "en": "Saxony-Anhalt",
+      "de": "Sachsen-Anhalt",
+      "fa": "زاکسن-آنهالت"
+    },
+    "email": "info@sk.sachsen.de, buergerbuero@stk.sachsen-anhalt.de, ministerpraesident@stk.sachsen-anhalt.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "SH": {
+    "name": {
+      "en": "Schleswig-Holstein",
+      "de": "Schleswig-Holstein",
+      "fa": "اشلسویگ-هولشتاین"
+    },
+    "email": "landesportal@stk.landsh.de, ministerpraesident@stk.landsh.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "TH": {
+    "name": {
+      "en": "Thuringia",
+      "de": "Thüringen",
+      "fa": "تورینگن"
+    },
+    "email": "poststelle@tsk.thueringen.de, buergerbuero@tsk.thueringen.de",
+    "templates": ["template_1", "template_2", "template_3"]
   }
 }

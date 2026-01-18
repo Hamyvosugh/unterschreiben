@@ -1,28 +1,30 @@
 "use client";
 
-import {
-  ChevronRight,
-  FileText,
-  Globe,
-  Loader2,
-  Mail,
-  MapPin,
-  Send,
-} from "lucide-react";
+import { ChevronRight, FileText, Loader2, Mail, Send } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function EmailSelector() {
   const [step, setStep] = useState(1);
   const [language, setLanguage] = useState("fa");
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [selectedState, setSelectedState] = useState("");
   const [selectedTemplate, setSelectedTemplate] = useState("");
   const [userName, setUserName] = useState("");
-  const [emailData, setEmailData] = useState({ to: "", subject: "", body: "" });
+  const [emailData, setEmailData] = useState({
+    to: "",
+    cc: "",
+    subject: "",
+    body: "",
+  });
+
+  // Hardcoded CC emails - Replace with actual emails
+  const ccEmails = [
+    "example1@bundestag.de",
+    "example2@bundestag.de",
+    "example3@bundestag.de",
+    "example4@bundestag.de",
+    "example5@bundestag.de",
+  ];
 
   // Data from JSON files
-  const [countries, setCountries] = useState<any>({});
-  const [states, setStates] = useState<any>({});
   const [templates, setTemplates] = useState<any>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -34,23 +36,15 @@ export default function EmailSelector() {
       try {
         setLoading(true);
 
-        // Load all JSON files
-        const [countriesRes, statesRes, templatesRes] = await Promise.all([
-          fetch("/data/countries.json"),
-          fetch("/data/states.json"),
-          fetch("/data/templates.json"),
-        ]);
+        // Load templates file
+        const templatesRes = await fetch("/data/templates.json");
 
-        if (!countriesRes.ok || !statesRes.ok || !templatesRes.ok) {
-          throw new Error("Failed to load data files");
+        if (!templatesRes.ok) {
+          throw new Error("Failed to load templates file");
         }
 
-        const countriesData = await countriesRes.json();
-        const statesData = await statesRes.json();
         const templatesData = await templatesRes.json();
 
-        setCountries(countriesData);
-        setStates(statesData);
         setTemplates(templatesData);
         setError(null);
       } catch (err) {
@@ -64,30 +58,17 @@ export default function EmailSelector() {
     loadData();
   }, []);
 
-  const handleCountrySelect = (countryCode: string) => {
-    setSelectedCountry(countryCode);
-    setSelectedState("");
-    setSelectedTemplate("");
-    setStep(2);
-  };
-
-  const handleStateSelect = (stateCode: string) => {
-    setSelectedState(stateCode);
-    setSelectedTemplate("");
-    const email = states[stateCode]?.email || "";
-    setEmailData({ ...emailData, to: email });
-    setStep(3);
-  };
-
   const handleTemplateSelect = (templateId: string) => {
     setSelectedTemplate(templateId);
     const template = templates[templateId];
+    const ccString = ccEmails.join(",");
     setEmailData({
-      to: emailData.to,
+      to: "",
+      cc: ccString,
       subject: template.subject,
       body: template.body,
     });
-    setStep(4);
+    setStep(2);
   };
 
   const handleRewrite = async () => {
@@ -132,19 +113,19 @@ export default function EmailSelector() {
 
     switch (service) {
       case "gmail":
-        url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailData.to)}&su=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(bodyWithName)}`;
+        url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailData.to)}&cc=${encodeURIComponent(emailData.cc)}&su=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(bodyWithName)}`;
         window.open(url, "_blank");
         break;
       case "outlook":
-        url = `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(emailData.to)}&subject=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(bodyWithName)}`;
+        url = `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(emailData.to)}&cc=${encodeURIComponent(emailData.cc)}&subject=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(bodyWithName)}`;
         window.open(url, "_blank");
         break;
       case "yahoo":
-        url = `https://compose.mail.yahoo.com/?to=${encodeURIComponent(emailData.to)}&subject=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(bodyWithName)}`;
+        url = `https://compose.mail.yahoo.com/?to=${encodeURIComponent(emailData.to)}&cc=${encodeURIComponent(emailData.cc)}&subject=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(bodyWithName)}`;
         window.open(url, "_blank");
         break;
       case "default":
-        url = `mailto:${encodeURIComponent(emailData.to)}?subject=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(bodyWithName)}`;
+        url = `mailto:${encodeURIComponent(emailData.to)}?cc=${encodeURIComponent(emailData.cc)}&subject=${encodeURIComponent(emailData.subject)}&body=${encodeURIComponent(bodyWithName)}`;
         const link = document.createElement("a");
         link.href = url;
         link.click();
@@ -152,23 +133,13 @@ export default function EmailSelector() {
     }
   };
 
-  // Get available states for selected country
-  const availableStates =
-    selectedCountry && countries[selectedCountry]
-      ? countries[selectedCountry].states.map((stateCode: string) => ({
-          code: stateCode,
-          ...states[stateCode],
-        }))
-      : [];
-
-  // Get available templates for selected state
-  const availableTemplates =
-    selectedState && states[selectedState]
-      ? states[selectedState].templates.map((templateId: string) => ({
-          id: templateId,
-          ...templates[templateId],
-        }))
-      : [];
+  // Get available templates - show all templates
+  const availableTemplates = Object.keys(templates).map(
+    (templateId: string) => ({
+      id: templateId,
+      ...templates[templateId],
+    }),
+  );
 
   // Loading state
   if (loading) {
@@ -177,7 +148,8 @@ export default function EmailSelector() {
         <div className="text-center">
           <Loader2 className="w-12 h-12 text-blue-600 animate-spin mx-auto mb-4" />
           <p className="text-gray-600 font-medium">Loading data...</p>
-        </div>^
+        </div>
+        ^
       </div>
     );
   }
@@ -255,14 +227,14 @@ export default function EmailSelector() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-white">
-                  {language === "en" && " Send Email to State Representatives"}
-                  {language === "de" && "E-Mail an Landesvertreter senden"}
-                  {language === "fa" && "ارسال ایمیل به نمایندگان ایالتی"}
+                  {language === "en" && " Send Email to Representatives"}
+                  {language === "de" && "E-Mail an Vertreter senden"}
+                  {language === "fa" && "ارسال ایمیل به نمایندگان"}
                 </h1>
                 <p className="text-blue-100 text-sm mt-1">
-                  {language === "en" && `Step ${step} of 4`}
-                  {language === "de" && `Schritt ${step} von 4`}
-                  {language === "fa" && `مرحله ${step} از 4`}
+                  {language === "en" && `Step ${step} of 2`}
+                  {language === "de" && `Schritt ${step} von 2`}
+                  {language === "fa" && `مرحله ${step} از 2`}
                 </p>
               </div>
             </div>
@@ -272,98 +244,14 @@ export default function EmailSelector() {
           <div className="bg-gray-100 h-2 ">
             <div
               className="bg-gradient-to-r from-blue-600 to-indigo-600 h-full transition-all duration-500"
-              style={{ width: `${(step / 4) * 100}%` }}
+              style={{ width: `${(step / 2) * 100}%` }}
             />
           </div>
 
           <div className="p-6 md:p-8">
-            {/* Step 1: Country Selection */}
+            {/* Step 1: Template Selection */}
             {step === 1 && (
-              <div className="space-y-4 ">
-                <div className="flex items-center gap-2 mb-6">
-                  <Globe className="w-5 h-5 text-blue-600" />
-                  <h2 className="text-xl font-semibold text-gray-800">
-                    {language === "en" && "Select Country"}
-                    {language === "de" && "Land auswählen"}
-                    {language === "fa" && "انتخاب کشور"}
-                  </h2>
-                </div>
-
-                {Object.entries(countries).map(
-                  ([code, country]: [string, any]) => (
-                    <button
-                      key={code}
-                      onClick={() => handleCountrySelect(code)}
-                      className="w-full p-5 bg-white border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all duration-300 flex items-center justify-between group"
-                    >
-                      <div className="flex items-center gap-3">
-                        <MapPin className="w-5 h-5 text-blue-600" />
-                        <span className="font-semibold text-gray-800">
-                          {country.name[language]}
-                        </span>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
-                    </button>
-                  ),
-                )}
-              </div>
-            )}
-
-            {/* Step 2: State Selection */}
-            {step === 2 && selectedCountry && (
               <div className="space-y-4">
-                <button
-                  onClick={() => setStep(1)}
-                  className="text-sm text-blue-600 hover:text-blue-700 mb-4"
-                >
-                  {language === "en" && "← Back to Country"}
-                  {language === "de" && "← Zurück zum Land"}
-                  {language === "fa" && "→ بازگشت به کشور"}
-                </button>
-
-                <div className="flex items-center gap-2 mb-6">
-                  <MapPin className="w-5 h-5 text-blue-600" />
-                  <h2 className="text-xl font-semibold text-gray-800">
-                    {language === "en" && "Select State"}
-                    {language === "de" && "Bundesland auswählen"}
-                    {language === "fa" && "انتخاب ایالت"}
-                  </h2>
-                </div>
-
-                {availableStates.map((state: any) => (
-                  <button
-                    key={state.code}
-                    onClick={() => handleStateSelect(state.code)}
-                    className="w-full p-5 bg-white border-2 border-gray-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition-all duration-300 group"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="text-left">
-                        <div className="font-semibold text-gray-800">
-                          {state.name?.[language] || state.code}
-                        </div>
-                        <div className="text-sm text-gray-500 mt-1">
-                          {state.email}
-                        </div>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {/* Step 3: Template Selection */}
-            {step === 3 && selectedState && (
-              <div className="space-y-4">
-                <button
-                  onClick={() => setStep(2)}
-                  className="text-sm text-blue-600 hover:text-blue-700 mb-4"
-                >
-                  {language === "en" && "← Back to State"}
-                  {language === "de" && "← Zurück zum Bundesland"}
-                  {language === "fa" && "→ بازگشت به ایالت"}
-                </button>
-
                 <div className="flex items-center gap-2 mb-6">
                   <FileText className="w-5 h-5 text-blue-600" />
                   <h2 className="text-xl font-semibold text-gray-800">
@@ -395,11 +283,11 @@ export default function EmailSelector() {
               </div>
             )}
 
-            {/* Step 4: Review and Send */}
-            {step === 4 && selectedTemplate && (
+            {/* Step 2: Review and Send */}
+            {step === 2 && selectedTemplate && (
               <div className="space-y-6">
                 <button
-                  onClick={() => setStep(3)}
+                  onClick={() => setStep(1)}
                   className="text-sm text-blue-600 hover:text-blue-700 mb-4"
                 >
                   {language === "en" && "← Back to Templates"}
@@ -409,13 +297,15 @@ export default function EmailSelector() {
 
                 <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-lg">
                   <p className="text-sm font-semibold text-blue-900 mb-2">
-                    {language === "en" && " Note: Please insert your name and click Rewrite with AI to make your text slightly different from other citizens."}
-                    {language === "de" && " Hinweis: Bitte Ihren Namen einfügen und auf die Schaltfläche Mit KI umschreiben klicken, damit Ihr Text sich leicht von dem anderer Bürger unterscheidet."}
-                    {language === "fa" && "توجه: نام خود را بنویسید و روی دکمه تغییر  با هوش مصنوعی کلیک کنید تا متن شما با کمی تفاوت نسبت به متن سایر هموطنان ارسال شود"}
+                    {language === "en" &&
+                      " Note: Please insert your name and click Rewrite with AI to make your text slightly different from other citizens."}
+                    {language === "de" &&
+                      " Hinweis: Bitte Ihren Namen einfügen und auf die Schaltfläche Mit KI umschreiben klicken, damit Ihr Text sich leicht von dem anderer Bürger unterscheidet."}
+                    {language === "fa" &&
+                      "توجه: نام خود را بنویسید و روی دکمه تغییر  با هوش مصنوعی کلیک کنید تا متن شما با کمی تفاوت نسبت به متن سایر هموطنان ارسال شود"}
                   </p>
                   <p className="text-sm text-blue-800">
-                    {language === "en" &&
-                      "No data is stored on this site."}
+                    {language === "en" && "No data is stored on this site."}
                     {language === "de" &&
                       " Es werden keine Daten auf dieser Seite gespeichert."}
                     {language === "fa" &&
@@ -446,16 +336,47 @@ export default function EmailSelector() {
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-800 mb-2">
-                    {language === "en" && "To"}
-                    {language === "de" && "An"}
-                    {language === "fa" && "گیرنده"}
+                    {language === "en" && "To (optional)"}
+                    {language === "de" && "An (optional)"}
+                    {language === "fa" && "گیرنده (اختیاری)"}
                   </label>
                   <input
                     type="email"
                     value={emailData.to}
-                    readOnly
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-50"
+                    onChange={(e) =>
+                      setEmailData({ ...emailData, to: e.target.value })
+                    }
+                    placeholder={
+                      language === "en"
+                        ? "Enter recipient email (optional)"
+                        : language === "de"
+                          ? "E-Mail-Adresse eingeben (optional)"
+                          : "ایمیل گیرنده را وارد کنید (اختیاری)"
+                    }
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-gray-50 focus:bg-white"
                   />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-gray-800 mb-2">
+                    {language === "en" && "CC (Carbon Copy)"}
+                    {language === "de" && "CC (Kopie)"}
+                    {language === "fa" && "رونوشت (CC)"}
+                  </label>
+                  <textarea
+                    value={emailData.cc}
+                    readOnly
+                    rows={3}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-50 text-sm"
+                  />
+                  <p className="text-xs text-gray-500 mt-1">
+                    {language === "en" &&
+                      "These emails will receive a copy of your message"}
+                    {language === "de" &&
+                      "Diese E-Mails erhalten eine Kopie Ihrer Nachricht"}
+                    {language === "fa" &&
+                      "این ایمیل‌ها رونوشت پیام شما را دریافت می‌کنند"}
+                  </p>
                 </div>
 
                 <div>
