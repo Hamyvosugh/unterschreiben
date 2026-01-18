@@ -8,8 +8,11 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f6f7;
+  --foreground: #003366;
+  --bundesamt-blue: #004b9a;
+  --bundesamt-light-blue: #e8f0f8;
+  --bundesamt-dark: #002b5c;
 }
 
 @theme inline {
@@ -17,12 +20,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-bundesamt-blue: var(--bundesamt-blue);
+  --color-bundesamt-light-blue: var(--bundesamt-light-blue);
+  --color-bundesamt-dark: var(--bundesamt-dark);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #4e3a3a;
+    --background: #f5f6f7;
+    --foreground: #003366;
   }
 }
 

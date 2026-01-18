@@ -1,0 +1,10 @@
+{
+  "DE": {
+    "name": {
+      "en": "Germany",
+      "de": "Deutschland",
+      "fa": "آلمان"
+    },
+    "states": ["BW", "BY", "BE", "NW", "HE", "RP", "SN", "ST", "TH", "SH", "HH", "HB", "BB", "MV", "SL", "NI"]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "BW": {
+    "name": {
+      "en": "Baden-Württemberg",
+      "de": "Baden-Württemberg",
+      "fa": "بادن-وورتمبرگ"
+    },
+    "email": "bw.contact@example.de",
+    "templates": ["template_1", "template_2", "template_3"]
+  },
+  "BY": {
+    "name": {
+      "en": "Bavaria",
+      "de": "Bayern",
+      "fa": "بایرن"
+    },
+    "email": "bayern.contact@example.de",
+    "templates": ["template_1", "template_4", "template_5"]
+  },
+  "BE": {
+    "name": {
+      "en": "Berlin",
+      "de": "Berlin",
+      "fa": "برلین"
+    },
+    "email": "berlin.contact@example.de",
+    "templates": ["template_2", "template_6", "template_7"]
+  },
+  "NW": {
+    "name": {
+      "en": "North Rhine-Westphalia",
+      "de": "Nordrhein-Westfalen",
+      "fa": "نوردراین-وستفالن"
+    },
+    "email": "nrw.contact@example.de",
+    "templates": ["template_1", "template_3", "template_8"]
+  }
+}
