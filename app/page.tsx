@@ -28,7 +28,7 @@ export default function EmailSelector() {
   const [error, setError] = useState<string | null>(null);
   const [isRewriting, setIsRewriting] = useState(false);
 
-  // Load JSON data
+  // Loads JSON data
   useEffect(() => {
     const loadData = async () => {
       try {
