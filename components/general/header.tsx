@@ -131,7 +131,7 @@ export default function Header() {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 10px 40px rgba(34, 197, 94, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => handleNavigation('/send')}
+              onClick={() => handleNavigation('/germany')}
               className="hidden md:flex items-center gap-2 px-6 py-3 bg-linear-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-full shadow-lg hover:shadow-green-500/50 transition-all duration-300"
             >
               <Send className="w-4 h-4" />

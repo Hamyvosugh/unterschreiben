@@ -39,7 +39,7 @@ export default function FreedomHero() {
   };
 
   return (
-    <div className="relative min-h-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+    <div className="relative min-h-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden pt-10 pb-10 sm:pt-0 sm:pb-0">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div

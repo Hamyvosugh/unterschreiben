@@ -258,6 +258,7 @@ export default function WhyItMatters() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => (window.location.href = "/mail")}
             className="bg-linear-to-r from-green-500 to-emerald-600 text-white px-12 py-5 rounded-full text-xl font-bold shadow-2xl hover:shadow-green-500/50 transition-all duration-300 inline-flex items-center gap-3"
           >
             <Send className="w-6 h-6" />

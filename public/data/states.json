@@ -6,7 +6,7 @@
       "fa": "بادن-وورتمبرگ"
     },
     "email": "poststelle@stk.baden-wuerttemberg.de, winfried.kretschmann@gruene.landtag-bw.de",
-    "templates": ["template_1", "template_2", "template_3"]
+    "templates": ["template_1"]
   },
   "BY": {
     "name": {
@@ -15,7 +15,7 @@
       "fa": "بایرن"
     },
     "email": "poststelle@stk.bayern.de, landtag@bayern.landtag.de, ministerpraesident@stk.bayern.de",
-    "templates": ["template_1", "template_4", "template_5"]
+    "templates": ["template_1"]
   },
   "BE": {
     "name": {
@@ -24,7 +24,7 @@
       "fa": "برلین"
     },
     "email": "der-regierende-buergermeister@senatskanzlei.berlin",
-    "templates": ["template_2", "template_6", "template_7"]
+     "templates": ["template_1"]
   },
   "NW": {
     "name": {
@@ -33,7 +33,7 @@
       "fa": "نوردراین-وستفالن"
     },
     "email": "presse@stk.nrw.de, ministerpraesident@stk.nrw.de, nrwdirekt@nrw.de",
-    "templates": ["template_1", "template_3", "template_8"]
+   "templates": ["template_1"]
   },
   "BB": {
     "name": {
@@ -42,7 +42,7 @@
       "fa": "براندنبورگ"
     },
     "email": "poststelle@stk.brandenburg.de, buergerbuero@stk.brandenburg.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "HB": {
     "name": {
@@ -51,7 +51,7 @@
       "fa": "برمن"
     },
     "email": "ifg@sk.bremen.de, buergerbuero@sk.bremen.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "HH": {
     "name": {
@@ -60,7 +60,7 @@
       "fa": "هامبورگ"
     },
     "email": "Poststelle@rs.hamburg.de, buergerbuero@sk.hamburg.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "HE": {
     "name": {
@@ -69,7 +69,7 @@
       "fa": "هسن"
     },
     "email": "info@stk.hessen.de, buergertelefon@stk.hessen.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "MV": {
     "name": {
@@ -78,7 +78,7 @@
       "fa": "مکلنبورگ-فورپومرن"
     },
     "email": "poststelle@stk.mv-regierung.de, buergerbuero@stk.mv-regierung.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "NI": {
     "name": {
@@ -87,7 +87,7 @@
       "fa": "نیدرزاکسن"
     },
     "email": "poststelle@stk.niedersachsen.de, internet-redaktion@stk.niedersachsen.de, buergerbuero@stk.niedersachsen.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "RP": {
     "name": {
@@ -96,7 +96,7 @@
       "fa": "راینلاند-فالتس"
     },
     "email": "poststelle@stk.rlp.de, buergerbuero@stk.rlp.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "SL": {
     "name": {
@@ -105,7 +105,7 @@
       "fa": "سارلند"
     },
     "email": "poststelle@staatskanzlei.saarland.de, m.burghard@staatskanzlei.saarland.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "SN": {
     "name": {
@@ -114,7 +114,7 @@
       "fa": "زاکسن"
     },
     "email": "ministerpraesident@dd.sk.sachsen.de, buergerbuero@dd.sk.sachsen.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "ST": {
     "name": {
@@ -123,7 +123,7 @@
       "fa": "زاکسن-آنهالت"
     },
     "email": "info@sk.sachsen.de, buergerbuero@stk.sachsen-anhalt.de, ministerpraesident@stk.sachsen-anhalt.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "SH": {
     "name": {
@@ -132,7 +132,7 @@
       "fa": "اشلسویگ-هولشتاین"
     },
     "email": "landesportal@stk.landsh.de, ministerpraesident@stk.landsh.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   },
   "TH": {
     "name": {
@@ -141,6 +141,6 @@
       "fa": "تورینگن"
     },
     "email": "poststelle@tsk.thueringen.de, buergerbuero@tsk.thueringen.de",
-    "templates": ["template_1", "template_2", "template_3"]
+     "templates": ["template_1"]
   }
 }

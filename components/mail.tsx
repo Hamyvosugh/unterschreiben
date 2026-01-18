@@ -177,7 +177,8 @@ export default function EmailSelector() {
         <div className="text-center">
           <Loader2 className="w-12 h-12 text-blue-600 animate-spin mx-auto mb-4" />
           <p className="text-gray-600 font-medium">Loading data...</p>
-        </div>^
+        </div>
+        ^
       </div>
     );
   }
@@ -341,9 +342,6 @@ export default function EmailSelector() {
                         <div className="font-semibold text-gray-800">
                           {state.name?.[language] || state.code}
                         </div>
-                        <div className="text-sm text-gray-500 mt-1">
-                          {state.email}
-                        </div>
                       </div>
                       <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
                     </div>
@@ -409,13 +407,15 @@ export default function EmailSelector() {
 
                 <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-lg">
                   <p className="text-sm font-semibold text-blue-900 mb-2">
-                    {language === "en" && " Note: Please insert your name and click Rewrite with AI to make your text slightly different from other citizens."}
-                    {language === "de" && " Hinweis: Bitte Ihren Namen einfügen und auf die Schaltfläche Mit KI umschreiben klicken, damit Ihr Text sich leicht von dem anderer Bürger unterscheidet."}
-                    {language === "fa" && "توجه: نام خود را بنویسید و روی دکمه تغییر  با هوش مصنوعی کلیک کنید تا متن شما با کمی تفاوت نسبت به متن سایر هموطنان ارسال شود"}
+                    {language === "en" &&
+                      " Note: Please insert your name and click Rewrite with AI to make your text slightly different from other citizens."}
+                    {language === "de" &&
+                      " Hinweis: Bitte Ihren Namen einfügen und auf die Schaltfläche Mit KI umschreiben klicken, damit Ihr Text sich leicht von dem anderer Bürger unterscheidet."}
+                    {language === "fa" &&
+                      "توجه: نام خود را بنویسید و روی دکمه تغییر  با هوش مصنوعی کلیک کنید تا متن شما با کمی تفاوت نسبت به متن سایر هموطنان ارسال شود"}
                   </p>
                   <p className="text-sm text-blue-800">
-                    {language === "en" &&
-                      "No data is stored on this site."}
+                    {language === "en" && "No data is stored on this site."}
                     {language === "de" &&
                       " Es werden keine Daten auf dieser Seite gespeichert."}
                     {language === "fa" &&
@@ -521,7 +521,8 @@ export default function EmailSelector() {
                       setEmailData({ ...emailData, body: e.target.value })
                     }
                     rows={10}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none bg-gray-50 focus:bg-white"
+                    dir="ltr"
+                    className="w-full px-4 py-3 border-2  border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none bg-gray-50 focus:bg-white"
                   />
                 </div>
 
