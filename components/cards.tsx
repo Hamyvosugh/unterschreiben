@@ -19,14 +19,27 @@ const cardsData = [
   },
   {
     id: 2,
-    image: "/images/germany/bundestag.webp",
+    image: "/images/germany/personen.jpg",
     title: {
-      fa: "  نامه به سایر مراکز مهم در آلمان",
-      de: "Brief an andere wichtige Stellen in Deutschland",
+      fa: "  نامه به افراد تاثیرگذار در آلمان",
+      de: "Brief an einflussreiche Personen in Deutschland",
     },
     description: {
-      fa: "مراکز اقتصادی مهمی که با ایران روابط اقتصادی کلانی دارند",
-      de: "Wichtige Wirtschaftszentren mit umfangreichen Wirtschaftsbeziehungen zum Iran",
+      fa: "ارسال نامه به افراد مهم در آلمان",
+      de: "Brief an wichtige Persönlichkeiten in Deutschland",
+    },
+    link: "/germany/personen",
+  },
+  {
+    id: 3,
+    image: "/images/germany/wirtschaft.webp",
+    title: {
+      fa: "  نامه به مراکز اقتصادی مهم در آلمان",
+      de: "Brief an wichtige Wirtschaftszentren in Deutschland",
+    },
+    description: {
+      fa: "مراکز اقتصادی مهمی که با ایران روابط مالی کلانی دارند",
+      de: "Wichtige Wirtschaftszentren mit umfangreichen Finanzbeziehungen zum Iran",
     },
     link: "/germany/wirtschaft",
   },

@@ -16,15 +16,35 @@ export default function EmailSelector() {
   });
 
   // Hardcoded CC emails - Replace with actual emails
-const ccEmails = [
-    "buergerreferent@stm.bwl.de",
-    "stefan.hartung@de.bosch.com",
-    "Sven.kahn@de.bosch.com",
-    "Investor-relations@siemens-energiy.com",
-    "Contact@siemens.com",
-    "info@stuttgart.ihk.de",
-    "Info@muenchen.ihk.de",
-];
+  const ccEmails = [
+    "omid.nouripour@bundestag.de",
+    "lars.castellucci.wk@bundestag.de",
+    "lars.castellucci@bundestag.de",
+    "max.lucks@bundestag.de",
+    "michael.roth.wk03@bundestag.de",
+    "roderich.kiesewetter@bundestag.de",
+    "norbert.roettgen@bundestag.de",
+    "katrin.goering-eckardt@bundestag.de",
+    "luise.amtsberg@bundestag.de",
+    "Der-Regierende-Buergermeister@senatskanzlei.berlin.de",
+    "kontakt@kai-wegner.de",
+    "mike.josef@stadt-frankfurt.de",
+    "buergeramt@stadt-frankfurt.de",
+    "buergerbuero@sk.hamburg.de",
+    "buero.ob@muenchen.de",
+    "rathaus@muenchen.de",
+    "stadtverwaltung@stadt-koeln.de",
+    "oberbuergermeister@essen.de",
+    "stephan.keller@duesseldorf.de",
+    "kalouti@cdu-dortmund.de",
+    "Office@SK.Bremen.de",
+    "obm@leipzig.de",
+    "ob.nopper@stuttgart.de",
+    "obm@stadt.nuernberg.de",
+    "menschenrechtsausschuss@bundestag.de",
+    "auswaertiger-ausschuss@bundestag.de",
+    "menschenrechtsbeauftragter@diplo.de",
+  ];
 
   // Data from JSON files
   const [templates, setTemplates] = useState<any>({});
@@ -39,7 +59,7 @@ const ccEmails = [
         setLoading(true);
 
         // Load templates file
-        const templatesRes = await fetch("/data/templates3.json");
+        const templatesRes = await fetch("/data/templates2.json");
 
         if (!templatesRes.ok) {
           throw new Error("Failed to load templates file");
