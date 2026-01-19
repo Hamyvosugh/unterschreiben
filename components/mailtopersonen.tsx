@@ -344,7 +344,7 @@ export default function EmailSelector() {
                   <label className="block text-sm font-semibold text-gray-800 mb-2">
                     {language === "en" && "Your Full Name"}
                     {language === "de" && "Ihr vollständiger Name"}
-                    {language === "fa" && "نام کامل شما"}
+                    {language === "fa" && "نام کامل شما (در ایمیل هم می توانید اضافه کنید، در اینجا اختیاری است)"}
                   </label>
                   <input
                     type="text"
