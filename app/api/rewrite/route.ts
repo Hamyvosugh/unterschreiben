@@ -5,46 +5,6 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// Input validation and sanitization
-function validateInput(text: string): { valid: boolean; error?: string } {
-  if (!text || typeof text !== "string") {
-    return { valid: false, error: "Invalid text input" };
-  }
-
-  // Maximum length check
-  if (text.length > 10000) {
-    return { valid: false, error: "Text too long (max 10000 characters)" };
-  }
-
-  // Check for malicious patterns
-  const maliciousPatterns = [
-    /<script/i,
-    /<iframe/i,
-    /javascript:/i,
-    /onerror=/i,
-    /onclick=/i,
-    /onload=/i,
-  ];
-
-  for (const pattern of maliciousPatterns) {
-    if (pattern.test(text)) {
-      return { valid: false, error: "Invalid content detected" };
-    }
-  }
-
-  return { valid: true };
-}
-
-function sanitizeInput(text: string): string {
-  // Remove any potential XSS attempts
-  return text
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#x27;")
-    .replace(/\//g, "&#x2F;");
-}
-
 export async function POST(req: NextRequest) {
   try {
     // Check API key availability
@@ -56,34 +16,26 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Validate Content-Type
-    const contentType = req.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
-      return NextResponse.json(
-        { error: "Invalid Content-Type" },
-        { status: 400 },
-      );
-    }
-
-    // Parse JSON with size limit
+    // Parse JSON
     let body;
     try {
-      const text = await req.text();
-      if (text.length > 50000) {
-        return NextResponse.json(
-          { error: "Request body too large" },
-          { status: 413 },
-        );
-      }
-      body = JSON.parse(text);
+      body = await req.json();
     } catch (e) {
       return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
     }
 
     const { text, language } = body;
 
-    if (!text) {
+    if (!text || typeof text !== "string") {
       return NextResponse.json({ error: "Text is required" }, { status: 400 });
+    }
+
+    // Basic length check
+    if (text.length > 10000) {
+      return NextResponse.json(
+        { error: "Text too long (max 10000 characters)" },
+        { status: 400 },
+      );
     }
 
     const languageInstructions = {
@@ -126,6 +78,7 @@ Rewritten text (with minimal variation):`;
         ],
         temperature: 0.3,
         max_tokens: 1000,
+        timeout: 25000, // 25 seconds timeout
       });
 
       const rewrittenText = completion.choices[0]?.message?.content?.trim();

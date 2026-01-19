@@ -15,8 +15,8 @@ export default function EmailSelector() {
     body: "",
   });
 
-  // wirtschaft emais 
-const ccEmails = [
+  // wirtschaft emais
+  const ccEmails = [
     "buergerreferent@stm.bwl.de",
     "stefan.hartung@de.bosch.com",
     "Sven.kahn@de.bosch.com",
@@ -24,7 +24,7 @@ const ccEmails = [
     "Contact@siemens.com",
     "info@stuttgart.ihk.de",
     "Info@muenchen.ihk.de",
-];
+  ];
 
   // Data from JSON files
   const [templates, setTemplates] = useState<any>({});
@@ -88,20 +88,25 @@ const ccEmails = [
       });
 
       if (!response.ok) {
-        throw new Error("Failed to rewrite text");
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Rewrite API error:", response.status, errorData);
+        throw new Error(errorData.error || "Failed to rewrite text");
       }
 
       const data = await response.json();
+      if (!data.rewrittenText) {
+        throw new Error("No rewritten text received");
+      }
       setEmailData({ ...emailData, body: data.rewrittenText });
     } catch (error) {
       console.error("Error rewriting text:", error);
-      alert(
+      const errorMessage =
         language === "en"
           ? "Failed to rewrite text. Please try again."
           : language === "de"
             ? "Fehler beim Umschreiben des Textes. Bitte versuchen Sie es erneut."
-            : "خطا در بازنویسی متن. لطفا دوباره تلاش کنید.",
-      );
+            : "خطا در بازنویسی متن. لطفا دوباره تلاش کنید.";
+      alert(errorMessage);
     } finally {
       setIsRewriting(false);
     }

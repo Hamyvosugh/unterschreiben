@@ -30,7 +30,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.openai.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.openai.com https://vercel.live; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content"
         }
       ]
     }
@@ -39,6 +39,10 @@
   "redirects": [],
   "regions": ["fra1"],
   "functions": {
+    "app/api/rewrite/route.ts": {
+      "memory": 1024,
+      "maxDuration": 30
+    },
     "app/api/**/*.ts": {
       "memory": 1024,
       "maxDuration": 10
