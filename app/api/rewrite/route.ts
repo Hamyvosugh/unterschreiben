@@ -47,6 +47,15 @@ function sanitizeInput(text: string): string {
 
 export async function POST(req: NextRequest) {
   try {
+    // Check API key availability
+    if (!process.env.OPENAI_API_KEY) {
+      console.error("OPENAI_API_KEY is not configured");
+      return NextResponse.json(
+        { error: "Service configuration error" },
+        { status: 500 },
+      );
+    }
+
     // Validate Content-Type
     const contentType = req.headers.get("content-type");
     if (!contentType || !contentType.includes("application/json")) {
@@ -101,44 +110,52 @@ ${text}
 
 Rewritten text (with minimal variation):`;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are a subtle text rewriter that makes minimal changes to avoid spam detection while keeping content 95% identical.",
-        },
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-      temperature: 0.3,
-      max_tokens: 1000,
-    });
+    try {
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a subtle text rewriter that makes minimal changes to avoid spam detection while keeping content 95% identical.",
+          },
+          {
+            role: "user",
+            content: prompt,
+          },
+        ],
+        temperature: 0.3,
+        max_tokens: 1000,
+      });
 
-    const rewrittenText = completion.choices[0]?.message?.content?.trim();
+      const rewrittenText = completion.choices[0]?.message?.content?.trim();
 
-    if (!rewrittenText) {
+      if (!rewrittenText) {
+        console.error("OpenAI returned empty response");
+        return NextResponse.json(
+          { error: "Failed to rewrite text" },
+          { status: 500 },
+        );
+      }
+
+      // OpenAI output is safe, no need to sanitize
+      // We trust OpenAI's content filtering
       return NextResponse.json(
-        { error: "Failed to rewrite text" },
+        { rewrittenText: rewrittenText },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "X-Content-Type-Options": "nosniff",
+          },
+        },
+      );
+    } catch (openaiError) {
+      console.error("OpenAI API error:", openaiError);
+      return NextResponse.json(
+        { error: "Failed to rewrite text - AI service error" },
         { status: 500 },
       );
     }
-
-    // Sanitize output (though OpenAI should be safe)
-    const sanitizedOutput = sanitizeInput(rewrittenText);
-
-    return NextResponse.json(
-      { rewrittenText: sanitizedOutput },
-      {
-        headers: {
-          "Content-Type": "application/json",
-          "X-Content-Type-Options": "nosniff",
-        },
-      },
-    );
   } catch (error) {
     // Don't expose internal error details
     console.error("Error rewriting text:", error);

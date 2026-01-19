@@ -15,7 +15,7 @@ export default function EmailSelector() {
     body: "",
   });
 
-  // Hardcoded CC emails - Replace with actual emails
+  // wirtschaft emais 
 const ccEmails = [
     "buergerreferent@stm.bwl.de",
     "stefan.hartung@de.bosch.com",
