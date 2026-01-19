@@ -1,0 +1,61 @@
+# robots.txt for iranwing.com
+# Optimized for both traditional search engines and AI crawlers
+
+# Default rules for all robots
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Crawl-delay for general bots
+Crawl-delay: 1
+
+# Google Bot - Full access
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing Bot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Yandex Bot
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# ChatGPT / OpenAI Bot
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 1
+
+# Claude / Anthropic Bot
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 1
+
+# Google Extended (for AI training)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI Bot
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 1
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# Facebook Bot
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter Bot
+User-agent: Twitterbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://iranwing.com/sitemap.xml
