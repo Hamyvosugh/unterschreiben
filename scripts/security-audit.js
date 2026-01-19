@@ -48,9 +48,15 @@ if (fs.existsSync(".env")) {
   warnings.push("⚠️  فایل .env وجود ندارد - از .env.example استفاده کنید");
 }
 
-// 3. Check middleware.ts exists and has rate limiting
-if (fs.existsSync("middleware.ts")) {
-  const middlewareContent = fs.readFileSync("middleware.ts", "utf-8");
+// 3. Check middleware.ts or proxy.ts exists and has rate limiting
+const middlewareFile = fs.existsSync("middleware.ts")
+  ? "middleware.ts"
+  : fs.existsSync("proxy.ts")
+    ? "proxy.ts"
+    : null;
+
+if (middlewareFile) {
+  const middlewareContent = fs.readFileSync(middlewareFile, "utf-8");
 
   if (middlewareContent.includes("rateLimitMap")) {
     console.log("✅ Rate limiting در middleware فعال است");
@@ -70,7 +76,7 @@ if (fs.existsSync("middleware.ts")) {
     issues.push("❌ HSTS در middleware یافت نشد");
   }
 } else {
-  issues.push("❌ فایل middleware.ts یافت نشد");
+  issues.push("❌ فایل middleware.ts یا proxy.ts یافت نشد");
 }
 
 // 4. Check next.config.ts security settings

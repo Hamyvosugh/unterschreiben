@@ -47,7 +47,7 @@ function checkRateLimit(key: string, maxRequests: number): boolean {
   return true;
 }
 
-export function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Rate limiting

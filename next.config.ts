@@ -44,20 +44,13 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Disable unnecessary features
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
+  // TypeScript strict checking
   typescript: {
     ignoreBuildErrors: false,
   },
 
   // Production optimizations
   output: "standalone", // Better for production deployment
-  experimental: {
-    // Enable security features
-    strictNextHead: true,
-  },
 };
 
 export default nextConfig;
