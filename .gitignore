@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Security sensitive files
+*.key
+*.crt
+*.p12
+secrets/
+.secrets
+.npmrc
+.yarnrc

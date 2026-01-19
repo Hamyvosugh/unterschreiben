@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit": "npm audit --audit-level=moderate",
+    "audit:fix": "npm audit fix",
+    "security": "node scripts/security-audit.js",
+    "prebuild": "npm run security && npm run audit"
   },
   "dependencies": {
     "framer-motion": "^12.27.0",

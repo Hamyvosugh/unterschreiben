@@ -1,0 +1,85 @@
+name: Security Audit
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    # اجرای روزانه در ساعت 2 بامداد
+    - cron: "0 2 * * *"
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run security audit
+        run: |
+          npm audit --audit-level=moderate
+          node scripts/security-audit.js
+        continue-on-error: false
+
+      - name: Check for vulnerabilities
+        run: npm audit --production
+
+      - name: Run custom security checks
+        run: |
+          echo "🔍 بررسی فایل‌های حساس..."
+
+          # بررسی اینکه .env در git نباشد
+          if [ -f ".env" ]; then
+            echo "❌ خطا: فایل .env نباید در repository باشد!"
+            exit 1
+          fi
+
+          # بررسی API keys در کد
+          if grep -r "sk-[a-zA-Z0-9]\{48\}" --exclude-dir=node_modules --exclude-dir=.git .; then
+            echo "❌ خطا: API key در کد یافت شد!"
+            exit 1
+          fi
+
+          echo "✅ بررسی‌های امنیتی موفق بود"
+
+      - name: TypeScript type checking
+        run: npx tsc --noEmit
+
+      - name: ESLint security check
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Check dependencies for updates
+        run: npm outdated || true
+
+      - name: Generate security report
+        if: always()
+        run: |
+          echo "# Security Audit Report" > security-report.md
+          echo "Date: $(date)" >> security-report.md
+          echo "" >> security-report.md
+          echo "## NPM Audit" >> security-report.md
+          npm audit >> security-report.md || true
+
+      - name: Upload security report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-report
+          path: security-report.md
+          retention-days: 30
