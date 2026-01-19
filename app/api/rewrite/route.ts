@@ -63,23 +63,27 @@ ${text}
 Rewritten text (with minimal variation):`;
 
     try {
-      const completion = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
-        messages: [
-          {
-            role: "system",
-            content:
-              "You are a subtle text rewriter that makes minimal changes to avoid spam detection while keeping content 95% identical.",
-          },
-          {
-            role: "user",
-            content: prompt,
-          },
-        ],
-        temperature: 0.3,
-        max_tokens: 1000,
-        timeout: 25000, // 25 seconds timeout
-      });
+      const completion = await openai.chat.completions.create(
+        {
+          model: "gpt-4o-mini",
+          messages: [
+            {
+              role: "system",
+              content:
+                "You are a subtle text rewriter that makes minimal changes to avoid spam detection while keeping content 95% identical.",
+            },
+            {
+              role: "user",
+              content: prompt,
+            },
+          ],
+          temperature: 0.3,
+          max_tokens: 1000,
+        },
+        {
+          timeout: 25000, // 25 seconds timeout
+        },
+      );
 
       const rewrittenText = completion.choices[0]?.message?.content?.trim();
 

@@ -49,8 +49,11 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
 
+  // Temporarily bypass static generation issues
+  staticPageGenerationTimeout: 120,
+
   // Production optimizations
-  output: "standalone", // Better for production deployment
+  // output: "standalone", // Better for production deployment
 };
 
 export default nextConfig;
