@@ -5,7 +5,7 @@
       "de": "Baden-Württemberg",
       "fa": "بادن-وورتمبرگ"
     },
-    "email": "poststelle@stk.baden-wuerttemberg.de, winfried.kretschmann@gruene.landtag-bw.de",
+    "email": "poststelle@stk.baden-wuerttemberg.de, winfried.kretschmann@gruene.landtag-bw.de, hans-ulrich.ruelke@fdp.landtag-bw.de, dennis.birnstock@fdp.landtag-bw.de, frank.bonath@fdp.landtag-bw.de, stephen.brauer@fdp.landtag-bw.de, julia.goll@fdp.landtag-bw.de, christian.jung@fdp.landtag-bw.de, daniel.karrais@fdp.landtag-bw.de, timm.kern@fdp.landtag-bw.de, saskia.esken@bundestag.de, nils.schmid@bundestag.de, derya.tuerk-nachbaur@bundestag.de, lars.castellucci@bundestag.de, isabel.cademartori@bundestag.de, martin.gerster@bundestag.de, katja.mast@bundestag.de, parsa.marvi@bundestag.de, jasmina.hostert@bundestag.de, rita.schwarzeluehr-sutter@bundestag.de, thorsten.frei@bundestag.de, roderich.kiesewetter@bundestag.de, andreas.jung@bundestag.de, steffen.bilger@bundestag.de, nina.warken@bundestag.de, nicolas.zippelius@bundestag.de, christina.stumpp@bundestag.de, gunther.krichbaum@bundestag.de, thomas.bareiss@bundestag.de, franziska.brantner@bundestag.de, agnieszka.brugger@bundestag.de, cem.oezdemir@bundestag.de, ricarda.lang@bundestag.de, zoe.mayer@bundestag.de, sandra.detzer@bundestag.de, harald.ebner@bundestag.de, matthias.gastel@bundestag.de, anja.reinalter@bundestag.de, sahra.mirow@bundestag.de, luigi.pantisano@bundestag.de, goekay.akbulut@bundestag.de, vinzenz.glaser@bundestag.de, anne.zerr@bundestag.de, marcel.bauer@bundestag.de, jan.koestering@bundestag.de, alice.weidel@bundestag.de, markus.frohnmaier@bundestag.de, marc.bernhard@bundestag.de, anton.baron@afd.landtag-bw.de, rainer.balzer@afd.landtag-bw.de, alfred.bamberger@afd.landtag-bw.de, daniel.lindenschmid@afd.landtag-bw.de, miguel.klauss@afd.landtag-bw.de, hans-juergen.gossner@afd.landtag-bw.de, ruben.rupp@afd.landtag-bw.de",
     "templates": ["template_1"]
   },
   "BY": {
@@ -14,7 +14,7 @@
       "de": "Bayern",
       "fa": "بایرن"
     },
-    "email": "poststelle@stk.bayern.de, landtag@bayern.landtag.de, ministerpraesident@stk.bayern.de",
+    "email": "poststelle@stk.bayern.de, landtag@bayern.landtag.de, ministerpraesident@stk.bayern.de, carsten.traeger@bundestag.de, uli.groetsch@bundestag.de, alexander.dobrindt@bundestag.de, dorothee.baer@bundestag.de, florian.hahn@bundestag.de, thomas.erndl@bundestag.de, reinhard.brandl@bundestag.de, andrea.lindholz@bundestag.de, jamila.schaefer@bundestag.de, anton.hofreiter@bundestag.de, lisa.badum@bundestag.de, karl.baer@bundestag.de, leon.eckert@bundestag.de, victoria.brossart@bundestag.de, nicole.gohlke@bundestag.de, ates.guerpinar@bundestag.de, petr.bystron@bundestag.de, peter.boehringer@bundestag.de, martin.sichert@bundestag.de, peter.felser@bundestag.de",
     "templates": ["template_1"]
   },
   "BE": {
@@ -23,8 +23,8 @@
       "de": "Berlin",
       "fa": "برلین"
     },
-    "email": "der-regierende-buergermeister@senatskanzlei.berlin",
-     "templates": ["template_1"]
+    "email": "der-regierende-buergermeister@senatskanzlei.berlin, hakan.demir@bundestag.de, annika.klose@bundestag.de, jan-marco.luczak@bundestag.de, ottilie.klein@bundestag.de, andreas.audretsch@bundestag.de, renate.kuenast@bundestag.de, hanna.steinmueller@bundestag.de, gregor.gysi@bundestag.de, ines.schwerdtner@bundestag.de, gesine.loetzsch@bundestag.de, ferat.kocak@bundestag.de, pascal.meiser@bundestag.de, petra.pau@bundestag.de, beatrix.vonstorch@bundestag.de, gottfried.curio@bundestag.de, goetz.froemming@bundestag.de",
+    "templates": ["template_1"]
   },
   "NW": {
     "name": {
@@ -32,8 +32,8 @@
       "de": "Nordrhein-Westfalen",
       "fa": "نوردراین-وستفالن"
     },
-    "email": "presse@stk.nrw.de, ministerpraesident@stk.nrw.de, nrwdirekt@nrw.de",
-   "templates": ["template_1"]
+    "email": "presse@stk.nrw.de, ministerpraesident@stk.nrw.de, nrwdirekt@nrw.de, henning.hoene@landtag.nrw.de, marcel.hafke@landtag.nrw.de, franziska.mueller-rech@landtag.nrw.de, ralf.witzel@landtag.nrw.de, christof.rasche@landtag.nrw.de, angela.freimuth@landtag.nrw.de, dietmar.brockes@landtag.nrw.de, baerbel.bas@bundestag.de, sanae.abdi@bundestag.de, svenja.schulze@bundestag.de, frank.schwabe@bundestag.de, markus.toens@bundestag.de, michelle.muentefering@bundestag.de, oliver.kaczmarek@bundestag.de, kerstin.griese@bundestag.de, dirk.wiese@bundestag.de, zanda.martens@bundestag.de, friedrich.merz@bundestag.de, norbert.roettgen@bundestag.de, armin.laschet@bundestag.de, jens.spahn@bundestag.de, carsten.linnemann@bundestag.de, paul.ziemiak@bundestag.de, thomas.jarzombek@bundestag.de, serap.gueler@bundestag.de, guenter.krings@bundestag.de, ansgar.heveling@bundestag.de, katharina.droege@bundestag.de, irene.mihalic@bundestag.de, felix.banaszak@bundestag.de, max.lucks@bundestag.de, lamya.kaddor@bundestag.de, sven.lehmann@bundestag.de, janosch.dahmen@bundestag.de, nyke.slawik@bundestag.de, schahina.gambir@bundestag.de, jan-niclas.gesenhues@bundestag.de, kay.gottschalk@bundestag.de, stefan.keuter@bundestag.de",
+    "templates": ["template_1"]
   },
   "BB": {
     "name": {
@@ -41,8 +41,8 @@
       "de": "Brandenburg",
       "fa": "براندنبورگ"
     },
-    "email": "poststelle@stk.brandenburg.de, buergerbuero@stk.brandenburg.de",
-     "templates": ["template_1"]
+    "email": "poststelle@stk.brandenburg.de, buergerbuero@stk.brandenburg.de, olaf.scholz@bundestag.de, sonja.eichwede@bundestag.de, knut.abraham@bundestag.de, annalena.baerbock@bundestag.de, rene.springer@bundestag.de",
+    "templates": ["template_1"]
   },
   "HB": {
     "name": {
@@ -50,8 +50,8 @@
       "de": "Bremen",
       "fa": "برمن"
     },
-    "email": "ifg@sk.bremen.de, buergerbuero@sk.bremen.de",
-     "templates": ["template_1"]
+    "email": "ifg@sk.bremen.de, buergerbuero@sk.bremen.de, sarah.ryglewski@bundestag.de, kirsten.kappert-gonther@bundestag.de",
+    "templates": ["template_1"]
   },
   "HH": {
     "name": {
@@ -59,8 +59,8 @@
       "de": "Hamburg",
       "fa": "هامبورگ"
     },
-    "email": "Poststelle@rs.hamburg.de, buergerbuero@sk.hamburg.de",
-     "templates": ["template_1"]
+    "email": "Poststelle@rs.hamburg.de, buergerbuero@sk.hamburg.de, aydan.oezoguz@bundestag.de, metin.hakverdi@bundestag.de, falko.drossmann@bundestag.de, katharina.beck@bundestag.de, linda.heitmann@bundestag.de",
+    "templates": ["template_1"]
   },
   "HE": {
     "name": {
@@ -68,8 +68,8 @@
       "de": "Hessen",
       "fa": "هسن"
     },
-    "email": "info@stk.hessen.de, buergertelefon@stk.hessen.de",
-     "templates": ["template_1"]
+    "email": "info@stk.hessen.de, buergertelefon@stk.hessen.de, w.knell@ltg.hessen.de, s.naas@ltg.hessen.de, o.stirboeck@ltg.hessen.de, m.promny@ltg.hessen.de, y.puersuen@ltg.hessen.de, r.rock@ltg.hessen.de, michael.roth@bundestag.de, dagmar.schmidt@bundestag.de, kaweh.mansoori@bundestag.de, felix.doering@bundestag.de, michael.brand@bundestag.de, katja.leikert@bundestag.de, johannes.volkmann@bundestag.de, patricia.lips@bundestag.de, markus.koob@bundestag.de, klaus-peter.willsch@bundestag.de, omid.nouripour@bundestag.de, tarek.al-wazir@bundestag.de, deborah.duering@bundestag.de, ayse.asar@bundestag.de, boris.mijatovic@bundestag.de, janine.wissler@bundestag.de",
+    "templates": ["template_1"]
   },
   "MV": {
     "name": {
@@ -77,8 +77,8 @@
       "de": "Mecklenburg-Vorpommern",
       "fa": "مکلنبورگ-فورپومرن"
     },
-    "email": "poststelle@stk.mv-regierung.de, buergerbuero@stk.mv-regierung.de",
-     "templates": ["template_1"]
+    "email": "poststelle@stk.mv-regierung.de, buergerbuero@stk.mv-regierung.de, reem.alabali-radovan@bundestag.de, claudia.mueller@bundestag.de, ina.latendorf@bundestag.de, leif-erik.holm@bundestag.de, enrico.komning@bundestag.de",
+    "templates": ["template_1"]
   },
   "NI": {
     "name": {
@@ -86,8 +86,8 @@
       "de": "Niedersachsen",
       "fa": "نیدرزاکسن"
     },
-    "email": "poststelle@stk.niedersachsen.de, internet-redaktion@stk.niedersachsen.de, buergerbuero@stk.niedersachsen.de",
-     "templates": ["template_1"]
+    "email": "poststelle@stk.niedersachsen.de, internet-redaktion@stk.niedersachsen.de, buergerbuero@stk.niedersachsen.de, boris.pistorius@bundestag.de, lars.klingbeil@bundestag.de, hubertus.heil@bundestag.de, adis.ahmetovic@bundestag.de, matthias.miersch@bundestag.de, frauke.heiligenstadt@bundestag.de, gitta.connemann@bundestag.de, mathias.middelberg@bundestag.de, hendrik.hoppenstedt@bundestag.de, tilman.kuban@bundestag.de, albert.stegemann@bundestag.de, filiz.polat@bundestag.de, timon.dzienus@bundestag.de, alaa.alhamwi@bundestag.de, heidi.reichinnek@bundestag.de, joern.koenig@bundestag.de",
+    "templates": ["template_1"]
   },
   "RP": {
     "name": {
@@ -95,8 +95,8 @@
       "de": "Rheinland-Pfalz",
       "fa": "راینلاند-فالتس"
     },
-    "email": "poststelle@stk.rlp.de, buergerbuero@stk.rlp.de",
-     "templates": ["template_1"]
+    "email": "poststelle@stk.rlp.de, buergerbuero@stk.rlp.de, steven.wink@fdp.landtag.rlp.de, daniela.schmitt@fdp.landtag.rlp.de, philipp.fernis@fdp.landtag.rlp.de, mail@marcoweber-eifel.de, stefan.thoma@fdp.landtag-rlp.de, sebastian.muenzenmaier@bundestag.de",
+    "templates": ["template_1"]
   },
   "SL": {
     "name": {
@@ -105,7 +105,7 @@
       "fa": "سارلند"
     },
     "email": "poststelle@staatskanzlei.saarland.de, m.burghard@staatskanzlei.saarland.de",
-     "templates": ["template_1"]
+    "templates": ["template_1"]
   },
   "SN": {
     "name": {
@@ -113,8 +113,8 @@
       "de": "Sachsen",
       "fa": "زاکسن"
     },
-    "email": "ministerpraesident@dd.sk.sachsen.de, buergerbuero@dd.sk.sachsen.de",
-     "templates": ["template_1"]
+    "email": "ministerpraesident@dd.sk.sachsen.de, buergerbuero@dd.sk.sachsen.de, holger.mann@bundestag.de, paula.piechotta@bundestag.de, bernhard.herrmann@bundestag.de, soeren.pellmann@bundestag.de, clara.buenger@bundestag.de, tino.chrupalla@bundestag.de",
+    "templates": ["template_1"]
   },
   "ST": {
     "name": {
@@ -122,8 +122,8 @@
       "de": "Sachsen-Anhalt",
       "fa": "زاکسن-آنهالت"
     },
-    "email": "info@sk.sachsen.de, buergerbuero@stk.sachsen-anhalt.de, ministerpraesident@stk.sachsen-anhalt.de",
-     "templates": ["template_1"]
+    "email": "info@sk.sachsen.de, buergerbuero@stk.sachsen-anhalt.de, ministerpraesident@stk.sachsen-anhalt.de, andreas.silbersack@fdp-fraktion-lsa.de, joerg.bernstein@fdp-fraktion-lsa.de, guido.kosmehl@fdp-fraktion-lsa.de, konstantin.pott@fdp-fraktion-lsa.de, kathrin.tarricone@fdp-fraktion-lsa.de, steffi.lemke@bundestag.de, martin.reichardt@bundestag.de",
+    "templates": ["template_1"]
   },
   "SH": {
     "name": {
@@ -131,8 +131,8 @@
       "de": "Schleswig-Holstein",
       "fa": "اشلسویگ-هولشتاین"
     },
-    "email": "landesportal@stk.landsh.de, ministerpraesident@stk.landsh.de",
-     "templates": ["template_1"]
+    "email": "landesportal@stk.landsh.de, ministerpraesident@stk.landsh.de, christopher.vogt@fdp.ltsh.de, heiner.garg@fdp.ltsh.de, annabell.kraemer@fdp.ltsh.de, bernd.buchholz@fdp.ltsh.de, ralf.stegner@bundestag.de, tim.kluessendorf@bundestag.de, luise.amtsberg@bundestag.de, bruno.hoenel@bundestag.de, konstantin.notz@bundestag.de",
+    "templates": ["template_1"]
   },
   "TH": {
     "name": {
@@ -140,7 +140,7 @@
       "de": "Thüringen",
       "fa": "تورینگن"
     },
-    "email": "poststelle@tsk.thueringen.de, buergerbuero@tsk.thueringen.de",
-     "templates": ["template_1"]
+    "email": "poststelle@tsk.thueringen.de, buergerbuero@tsk.thueringen.de, elisabeth.kaiser@bundestag.de, katrin.goering-eckardt@bundestag.de, bodo.ramelow@bundestag.de, susanne.hennig-wellsow@bundestag.de, martina.renner@bundestag.de, stephan.brandner@bundestag.de",
+    "templates": ["template_1"]
   }
 }

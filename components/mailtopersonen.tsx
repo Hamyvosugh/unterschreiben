@@ -389,6 +389,7 @@ export default function EmailSelector() {
                     value={emailData.cc}
                     readOnly
                     rows={3}
+                    dir="ltr"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-50 text-sm"
                   />
                   <p className="text-xs text-gray-500 mt-1">
@@ -464,6 +465,7 @@ export default function EmailSelector() {
                       setEmailData({ ...emailData, body: e.target.value })
                     }
                     rows={10}
+                    dir="ltr"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none bg-gray-50 focus:bg-white"
                   />
                 </div>
