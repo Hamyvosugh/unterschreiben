@@ -5,6 +5,9 @@ import "./globals.css";
 
 // SEO Configuration - Optimized for both traditional search engines and AI models
 export const metadata: Metadata = {
+  // Metadata Base - CRITICAL for Open Graph images
+  metadataBase: new URL("https://iranwing.com"),
+
   // Basic Meta Tags
   title: {
     default: "امضا کردن - پلتفرم دیجیتال کمپین‌های اجتماعی و حمایت از حقوق بشر",
@@ -58,7 +61,7 @@ export const metadata: Metadata = {
       "ابزاری برای ارتباط با نمایندگان، حمایت از حقوق بشر و شرکت در کمپین‌های اجتماعی. صدای خود را به گوش مسئولان برسانید.",
     images: [
       {
-        url: "https://iranwing.com/images/og-image.jpg",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "امضا کردن - iranwing Platform",
@@ -72,7 +75,7 @@ export const metadata: Metadata = {
     title: "امضا کردن - پلتفرم دیجیتال کمپین‌های اجتماعی",
     description:
       "ابزاری برای ارتباط با نمایندگان، حمایت از حقوق بشر و شرکت در کمپین‌های اجتماعی",
-    images: ["https://iranwing.com/images/og-image.jpg"],
+    images: ["/images/og-image.jpg"],
     creator: "@iranwing",
   },
 
