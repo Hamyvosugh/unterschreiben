@@ -212,7 +212,7 @@ export default function FreedomHero() {
             className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto"
           >
             {[
-              { number: "600+", label: "ایمیل های اضافه شده" },
+              { number: "1430+", label: "ایمیل های اضافه شده" },
               { number: "1+", label: "کشور فعال: فعلا آلمان" },
               { number: "24/7", label: "پشتیبانی" },
             ].map((stat, i) => (
