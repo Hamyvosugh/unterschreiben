@@ -86,7 +86,7 @@ export default function Header() {
         }`}
       >
         {/* Background Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,.03)_1px,transparent_1px)] bg-[length:32px_32px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,.03)_1px,transparent_1px)] bg-size-[32px_32px] pointer-events-none" />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex items-center justify-between h-20">
@@ -98,7 +98,7 @@ export default function Header() {
               className="flex items-center gap-3 cursor-pointer"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl blur-xl opacity-60" />
+                <div className="absolute inset-0 bg-linear-to-r from-green-500 to-emerald-600 rounded-xl blur-xl opacity-60" />
                 <div className="relative w-12 h-12 bg-linear-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
                   <Send className="w-6 h-6 text-white" />
                 </div>
@@ -144,13 +144,13 @@ export default function Header() {
                       <motion.div
                         initial={{ scaleX: 0 }}
                         animate={{ scaleX: 1 }}
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-green-400 to-emerald-400"
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       />
                     )}
 
                     {!isActive && (
-                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-green-400 to-emerald-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                     )}
                   </motion.button>
                 );
@@ -216,7 +216,7 @@ export default function Header() {
                           flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 text-right
                           ${
                             isActive
-                              ? "bg-gradient-to-r from-green-500/20 to-emerald-500/20 text-green-300 font-semibold border border-green-500/30"
+                              ? "bg-linear-to-r from-green-500/20 to-emerald-500/20 text-green-300 font-semibold border border-green-500/30"
                               : "hover:bg-white/5 text-gray-200 hover:text-green-300"
                           }
                         `}
@@ -262,3 +262,5 @@ export default function Header() {
     </>
   );
 }
+
+

@@ -57,12 +57,12 @@ export default function FreedomHero() {
           variants={floatingVariants}
           animate="animate"
           style={{ animationDelay: "4s" }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-125 h-125 bg-purple-500/10 rounded-full blur-3xl"
         />
       </div>
 
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[64px_64px]" />
 
       {/* Floating icons and logos */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -157,7 +157,7 @@ export default function FreedomHero() {
           {/* Main headline */}
           <motion.h1
             variants={itemVariants}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-green-300 via-white to-red-300 bg-clip-text text-transparent leading-tight"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-linear-to-r from-green-300 via-white to-red-300 bg-clip-text text-transparent leading-tight"
             style={{ direction: "rtl" }}
           >
             صدای ایران باشیم
@@ -237,7 +237,7 @@ export default function FreedomHero() {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-slate-900 to-transparent" />
     </div>
   );
 }

@@ -25,7 +25,7 @@ export default function WhyItMatters() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-slate-50 to-white">
       {/* Header Section */}
       <section className="relative py-20 bg-linear-to-br from-slate-900 via-purple-900 to-slate-800 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[64px_64px]" />
@@ -56,14 +56,14 @@ export default function WhyItMatters() {
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeInUp} className="order-2 md:order-1">
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100">
+              <div className="bg-linear-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-100">
                 <img 
                   src="/images/why2.jpeg" 
                   alt="Unity Power" 
                   className="w-full h-64 object-cover rounded-xl mb-6"
                 />
                 <div className="flex items-start gap-4">
-                  <Users className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" />
+                  <Users className="w-8 h-8 text-green-600 shrink-0 mt-1" />
                   <div>
                     <h2 className="text-2xl font-bold text-slate-900 mb-4" style={{ direction: 'rtl' }}>
                       قدرتِ اتحاد در برابر دیواره‌های سکوت
@@ -78,7 +78,7 @@ export default function WhyItMatters() {
 
             <motion.div variants={fadeInUp} className="order-1 md:order-2">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-3xl blur-2xl" />
+                <div className="absolute -inset-4 bg-linear-to-r from-green-500/20 to-emerald-500/20 rounded-3xl blur-2xl" />
                 <img 
                   src="/images/why1.jpg" 
                   alt="Breaking Silence" 
@@ -100,7 +100,7 @@ export default function WhyItMatters() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div variants={fadeInUp}>
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
+                <div className="absolute -inset-4 bg-linear-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
                 <img 
                   src="/images/why3.webp" 
                   alt="Email Impact" 
@@ -110,9 +110,9 @@ export default function WhyItMatters() {
             </motion.div>
 
             <motion.div variants={fadeInUp}>
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
+              <div className="bg-linear-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
                 <div className="flex items-start gap-4 mb-6">
-                  <Mail className="w-8 h-8 text-blue-600 flex-shrink-0 mt-1" />
+                  <Mail className="w-8 h-8 text-blue-600 shrink-0 mt-1" />
                   <h2 className="text-2xl font-bold text-slate-900" style={{ direction: 'rtl' }}>
                     آیا ارسال یک ایمیل واقعاً تاثیرگذار است؟
                   </h2>
@@ -132,7 +132,7 @@ export default function WhyItMatters() {
                       variants={fadeInUp}
                       className="flex items-start gap-3 bg-white p-4 rounded-lg shadow-sm"
                     >
-                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-6 h-6 text-green-600 shrink-0 mt-1" />
                       <p className="text-slate-700" style={{ direction: 'rtl', lineHeight: '1.8' }}>
                         {text}
                       </p>
@@ -157,7 +157,7 @@ export default function WhyItMatters() {
           className="mb-20"
         >
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-red-500 to-pink-500 text-white px-6 py-3 rounded-full mb-6">
+            <div className="inline-flex items-center gap-3 bg-linear-to-r from-red-500 to-pink-500 text-white px-6 py-3 rounded-full mb-6">
               <Shield className="w-6 h-6" />
               <span className="font-bold text-lg" style={{ direction: 'rtl' }}>امنیت و حریم خصوصی شما؛ خط قرمز ما</span>
             </div>
@@ -225,7 +225,7 @@ export default function WhyItMatters() {
           variants={staggerContainer}
           className="mb-20"
         >
-          <div className="bg-gradient-to-br from-purple-900 via-indigo-900 to-slate-900 rounded-3xl p-12 relative overflow-hidden">
+          <div className="bg-linear-to-br from-purple-900 via-indigo-900 to-slate-900 rounded-3xl p-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-size-[32px_32px]" />
             
             <div className="relative z-10 max-w-4xl mx-auto text-center">

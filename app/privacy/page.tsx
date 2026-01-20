@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-linear-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
         </div>
 
         {/* Trust Badge */}
-        <div className="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 rounded-2xl p-6 mb-8">
+        <div className="bg-linear-to-r from-green-50 to-blue-50 border-2 border-green-200 rounded-2xl p-6 mb-8">
           <div className="flex items-start gap-4">
             <div className="text-4xl">🔒</div>
             <div>
@@ -244,7 +244,7 @@ export default function PrivacyPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300 p-6 rounded-lg mt-6">
+              <div className="bg-linear-to-r from-green-50 to-emerald-50 border-2 border-green-300 p-6 rounded-lg mt-6">
                 <h3 className="font-bold text-green-900 text-xl mb-3">
                   ✅ نمره امنیتی: 99/100
                 </h3>
@@ -411,7 +411,7 @@ export default function PrivacyPage() {
         </div>
 
         {/* Footer CTA */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center">
+        <div className="bg-linear-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center">
           <h2 className="text-3xl font-bold mb-4">
             🎉 حالا می‌توانید با خیال راحت استفاده کنید!
           </h2>

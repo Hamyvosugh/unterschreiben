@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-linear-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -461,7 +461,7 @@ export default function TermsPage() {
         </div>
 
         {/* Footer CTA */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white text-center mt-8">
+        <div className="bg-linear-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white text-center mt-8">
           <h2 className="text-3xl font-bold mb-2">
             با پذیرش این شرایط، می‌توانید از سایت استفاده کنید
           </h2>

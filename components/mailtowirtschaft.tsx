@@ -15,15 +15,66 @@ export default function EmailSelector() {
     body: "",
   });
 
-  // wirtschaft emais
+  // Wirtschaft Emails
   const ccEmails = [
-    "buergerreferent@stm.bwl.de",
-    "stefan.hartung@de.bosch.com",
-    "Sven.kahn@de.bosch.com",
-    "Investor-relations@siemens-energiy.com",
-    "Contact@siemens.com",
+    "service@handelskammer-hamburg.de",
+    "info@bw.ihk.de",
+    "info@darmstadt.ihk.de",
+    "service@berlin.ihk.de",
+    "info@ihk-ostbrandenburg.de",
+    "info@saarland.ihk.de",
+    "service@handelskammer-bremen.de",
+    "info@ihk-nrw.de",
+    "infocenter@ihk-nordwestfalen.de",
+    "info@ihk-n.de",
+    "service@pfalz.ihk24.de",
+    "info@schwerin.ihk.de",
+    "info@braunschweig.ihk.de",
+    "info@lahndill.ihk.de",
+    "kundencenter@duesseldorf.ihk.de",
+    "chemnitz@chemnitz.ihk.de",
+    "kammer@magdeburg.ihk.de",
+    "info@erfurt.ihk.de",
+    "info@schwaben.ihk.de",
+    "info@bayreuth.ihk.de",
+    "info@heilbronn.ihk.de",
+    "info@aachen.ihk.de",
+    "info@emden.ihk.de",
     "info@stuttgart.ihk.de",
-    "Info@muenchen.ihk.de",
+    "info@frankfurt-main.ihk.de",
+    "info@freiburg.ihk.de",
+    "zentrale@giessen-friedberg.ihk.de",
+    "info@gera.ihk.de",
+    "info@fulda.ihk.de",
+    "sihk@hagen.ihk.de",
+    "info@halle.ihk.de",
+    "info@hanau.ihk.de",
+    "info@hannover.ihk.de",
+    "info@kassel.ihk.de",
+    "info@karlsruhe.ihk.de",
+    "service@koblenz.ihk.de",
+    "info@konstanz.ihk.de",
+    "service@koeln.ihk.de",
+    "info@leipzig.ihk.de",
+    "info@weingarten.ihk.de",
+    "service@rheinhessen.ihk24.de",
+    "service@pforzheim.ihk.de",
+    "service@ihklw.de",
+    "info@ulm.ihk.de",
+    "kic@reutlingen.ihk.de",
+    "info@limburg.ihk.de",
+    "info@neubrandenburg.ihk.de",
+    "info@oldenburg.ihk.de",
+    "zentrale@ostwuerttemberg.ihk.de",
+    "ihk@osnabrueck.ihk.de",
+    "ihk@passau.ihk.de",
+    "info@regensburg.ihk.de",
+    "info@rostock.ihk.de",
+    "info@suhl.ihk.de",
+    "info@elbeweser.ihk.de",
+    "info@wuerzburg.ihk.de",
+    "info@vs.ihk.de",
+    "service@trier.ihk.de",
   ];
 
   // Data from JSON files
@@ -164,7 +215,7 @@ export default function EmailSelector() {
   // Error state
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-linear-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-xl border border-red-200 p-8 max-w-md">
           <div className="text-center">
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -227,7 +278,7 @@ export default function EmailSelector() {
 
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden  ">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 md:p-8">
+          <div className="bg-linear-to-r from-blue-600 to-indigo-600 p-6 md:p-8">
             <div className="flex items-center gap-3">
               <div className="bg-white/20 backdrop-blur-sm p-2.5 rounded-lg">
                 <Mail className="w-6 h-6 text-white" />
@@ -250,7 +301,7 @@ export default function EmailSelector() {
           {/* Progress Bar */}
           <div className="bg-gray-100 h-2 ">
             <div
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 h-full transition-all duration-500"
+              className="bg-linear-to-r from-blue-600 to-indigo-600 h-full transition-all duration-500"
               style={{ width: `${(step / 2) * 100}%` }}
             />
           </div>
@@ -324,7 +375,8 @@ export default function EmailSelector() {
                   <label className="block text-sm font-semibold text-gray-800 mb-2">
                     {language === "en" && "Your Full Name"}
                     {language === "de" && "Ihr vollständiger Name"}
-                    {language === "fa" && "نام کامل شما (در ایمیل هم می توانید اضافه کنید، در اینجا اختیاری است)"}
+                    {language === "fa" &&
+                      "نام کامل شما (در ایمیل هم می توانید اضافه کنید، در اینجا اختیاری است)"}
                   </label>
                   <input
                     type="text"
@@ -413,7 +465,7 @@ export default function EmailSelector() {
                     <button
                       onClick={handleRewrite}
                       disabled={isRewriting || !emailData.body}
-                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg text-sm"
+                      className="flex items-center gap-2 px-4 py-2 bg-linear-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg text-sm"
                     >
                       {isRewriting ? (
                         <>
@@ -489,7 +541,7 @@ export default function EmailSelector() {
 
                     <button
                       onClick={() => handleSendEmail("default")}
-                      className="group px-5 py-3.5 bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-xl font-semibold hover:from-gray-800 hover:to-gray-900 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                      className="group px-5 py-3.5 bg-linear-to-r from-gray-700 to-gray-800 text-white rounded-xl font-semibold hover:from-gray-800 hover:to-gray-900 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                     >
                       <Send className="w-5 h-5 group-hover:scale-110 transition-transform" />
                       Default

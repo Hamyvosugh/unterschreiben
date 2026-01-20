@@ -15,7 +15,7 @@ import {
 const teamMembers = [
   {
     id: 1,
-    name: "حامی وثوق  ",
+    name: "ارتباط با   ",
     nameEn: "Hamy Vosough",
     role: "  توسعه دهنده",
     roleEn: " Developer",
@@ -24,7 +24,7 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "عسل فراهانی ",
+    name: "ارتباط با  ",
     nameEn: "Asal Farahani",
     role: " ادمین ",
     roleEn: " Admin",
@@ -54,7 +54,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-linear-to-b from-slate-50 to-white">
       {/* Hero Section */}
       <section className="relative py-20 bg-linear-to-br from-slate-900 via-purple-900 to-slate-800 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[64px_64px]" />
@@ -101,9 +101,9 @@ export default function ContactPage() {
           className="mb-20"
         >
           <motion.div variants={fadeInUp} className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-red-50 to-pink-50 rounded-3xl p-8 md:p-12 border border-red-100 shadow-xl">
+            <div className="bg-linear-to-br from-red-50 to-pink-50 rounded-3xl p-8 md:p-12 border border-red-100 shadow-xl">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 bg-linear-to-br from-red-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg">
                   <Shield className="w-7 h-7 text-white" />
                 </div>
                 <h2
@@ -153,7 +153,7 @@ export default function ContactPage() {
                     variants={fadeInUp}
                     className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow"
                   >
-                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center shrink-0">
                       <item.icon className="w-5 h-5 text-red-600" />
                     </div>
                     <p
@@ -178,9 +178,9 @@ export default function ContactPage() {
           className="mb-20"
         >
           <motion.div variants={fadeInUp} className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 md:p-12 border border-green-100 shadow-xl">
+            <div className="bg-linear-to-br from-green-50 to-emerald-50 rounded-3xl p-8 md:p-12 border border-green-100 shadow-xl">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 bg-linear-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg">
                   <MessageCircle className="w-7 h-7 text-white" />
                 </div>
                 <h2
@@ -226,7 +226,7 @@ export default function ContactPage() {
           className="mb-20"
         >
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-linear-to-r from-purple-100 to-pink-100 mb-4">
               <Users className="w-5 h-5 text-purple-600" />
               <span className="text-sm font-medium text-purple-700">
                 تیم ما
@@ -258,25 +258,7 @@ export default function ContactPage() {
                   className="block"
                 >
                   <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                    {/* Profile Image */}
-                    <div className="relative overflow-hidden aspect-square">
-                      <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-
-                      {/* Instagram Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 z-20">
-                        <div className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2">
-                          <Instagram className="w-5 h-5 text-white" />
-                          <span className="text-white text-sm font-medium">
-                            Instagram
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+                
 
                     {/* Info */}
                     <div className="p-6 text-center">
@@ -289,7 +271,7 @@ export default function ContactPage() {
                       <p className="text-sm text-slate-500 mb-3">
                         {member.nameEn}
                       </p>
-                      <div className="inline-block px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full">
+                      <div className="inline-block px-4 py-2 bg-linear-to-r from-green-100 to-emerald-100 rounded-full">
                         <p
                           className="text-sm font-medium text-green-700"
                           style={{ fontFamily: "Vazirmatn, sans-serif" }}
@@ -316,7 +298,7 @@ export default function ContactPage() {
           variants={fadeInUp}
           className="text-center"
         >
-          <div className="max-w-2xl mx-auto bg-gradient-to-br from-purple-900 via-indigo-900 to-slate-900 rounded-3xl p-12 relative overflow-hidden">
+          <div className="max-w-2xl mx-auto bg-linear-to-br from-purple-900 via-indigo-900 to-slate-900 rounded-3xl p-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.05)_1px,transparent_1px)] bg-size-[32px_32px]" />
 
             <div className="relative z-10">
